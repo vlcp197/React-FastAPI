@@ -1,13 +1,16 @@
-import Footer from "../Components/Footer"
-import Navbar from "../Components/Navbar"
-import Body from "../Components/Body"
+import ProductList from "../pages/ProductList";
+import useFetch from "../components/useFetch";
 
-function Home(){
-    return (<>
-          <Navbar/>
-            <Body/>
-            <br/>
-        <Footer/></>);
+const Home = () => {
+  const { error, isPending, data: products } = useFetch('http://localhost:3000/products')
+
+  return (
+    <div className="home">
+      { error && <div>{ error }</div> }
+      { isPending && <div>Carregando...</div> }
+      { products && <ProductList products={products} /> }
+    </div>
+  );
 }
-
+ 
 export default Home;

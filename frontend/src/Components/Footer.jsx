@@ -1,19 +1,16 @@
-function Footer() {
+import { Link } from "react-router-dom";
 
-    return (
-        <div id="footerDiv" className="container ">
-            <footer className="py-3 my-4">
-                <ul className="nav justify-content-center border-bottom pb-3 mb-3">
-                    <li className="nav-item"><a xlinkHref="#" className="nav-link px-2 text-body-secondary">Home</a></li>
-                    <li className="nav-item"><a xlinkHref="#" className="nav-link px-2 text-body-secondary">Features</a></li>
-                    <li className="nav-item"><a xlinkHref="#" className="nav-link px-2 text-body-secondary">Pricing</a></li>
-                    <li className="nav-item"><a xlinkHref="#" className="nav-link px-2 text-body-secondary">FAQs</a></li>
-                    <li className="nav-item"><a xlinkHref="#" className="nav-link px-2 text-body-secondary">About</a></li>
-                </ul>
-                <p className="text-center text-body-secondary">© 2024 Padilha Perfumes, Inc</p>
-            </footer>
-        </div>
-    );
+const Footer = () => {
+  return (
+    <nav className="footer">
+      <div className="links">
+        <Link to="/">Sobre</Link>
+        <Link to="/">Contato</Link>
+      </div>
+
+      <div>Padilha Perfumes - {new Date().getFullYear()}</div>
+    </nav>
+  );
 }
 
 export default Footer;
