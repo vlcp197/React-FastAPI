@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import useFetch from "../components/useFetch";
 import { useNavigate } from "react-router-dom";
-import UpdateModal from "./UpdateModal";
 
 
 const ProductDetails = () => {
@@ -33,17 +32,6 @@ const ProductDetails = () => {
           <h2>{product.title}</h2>
           <p>R$ {product.price}</p>
           <div>{product.body}</div>
-          <div>
-            <button onClick={() => setIsModalOpen(true)} style={{
-              "marginLeft": '10%',
-              "backgroundColor": "darkblue"
-            }}>Atualizar produto</button>
-
-            <button onClick={handleDeleteClick} style={{
-              "marginLeft": '25%',
-              "backgroundColor": "#ff0000"
-            }}>Deletar produto</button>
-          </div>
         </article>
       )}
     </div>

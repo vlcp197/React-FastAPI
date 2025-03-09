@@ -4,8 +4,10 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Create from './pages/Create';
+import Update from "./pages/Update";
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
+import Crud from './pages/Crud';
 
 
 function App() {
@@ -17,8 +19,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/carrinho" element={<Cart />} />
-          <Route path="/create" element={<Create />} />
           <Route path="/produtos/:id" element={<ProductDetails/>} />
+          <Route path="/crud" element={<Crud />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/update/:id" element={<Update />} />
         </Routes>
       </div>
     </div>

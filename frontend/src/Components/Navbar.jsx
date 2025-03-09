@@ -6,8 +6,6 @@ const Navbar = () => {
       
       <Link to="/" ><h1>Padilha Perfumes</h1></Link>
       <div className="links">
-        <Link to="/create" >Novo Perfume</Link>
-        {/* <Link to="/create" >Novo Perfume</Link> */}
         <Link to="/">Home</Link>
         <Link to="/carrinho" style={{ 
           color: 'white', 
