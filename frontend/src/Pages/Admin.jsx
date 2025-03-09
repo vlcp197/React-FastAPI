@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Crud() {
     const limitWords = (text, maxWords) => {
@@ -9,9 +9,17 @@ export default function Crud() {
         const truncatedText = truncatedWords.join(" ");
         return words.length > maxWords ? `${truncatedText}...` : truncatedText;
     };
+
     
     const [columns, setColumns] = useState([]);
     const [records, setRecords] = useState([]);
+
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem("user"); 
+        navigate("/login"); 
+      };
 
     useEffect(() => {
         axios.get('http://localhost:3000/products')
@@ -20,8 +28,11 @@ export default function Crud() {
             setRecords(res.data)
         })
     }, []);
+
+
     return (
         <div className="container mt-5">
+            <button onClick={handleLogout}>Logout</button>
             <div className="text-end"><Link to="/create" className="btn btn-primary">Adicionar +</Link></div>
             <table className="table"> 
                 <thead>
