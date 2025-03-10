@@ -60,7 +60,7 @@ export default function Update(){
               type="file" 
               onChange={e=>setData({...data, img: e.target.files[0].name})}        
             />
-            
+
             <button className="btn btn-info">Atualizar</button>
           </form>
         </div>
