@@ -58,7 +58,7 @@ export default function Update(){
             <input 
               name="image"
               type="file" 
-              onChange={e=>setData({...data, img: e.target.files[0]})}        
+              onChange={e=>setData({...data, img: e.target.files[0].name})}        
             />
             
             <button className="btn btn-info">Atualizar</button>
